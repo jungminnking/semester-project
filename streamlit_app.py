@@ -19,14 +19,14 @@ df_all = load_data(csv_url)
 
 # Series
 series = {
-    "LNS12000000": {"section": "Employment", "name": "Civilian Employment (Thousands, SA)"},
-    "CES0000000001": {"section": "Employment", "name": "Total Nonfarm Employment (Thousands, SA)"},
-    "LNS14000000": {"section": "Employment", "name": "Unemployment Rate (% SA)"},
-    "CES0500000002": {"section": "Employment", "name": "Avg Weekly Hours, Total Private (SA)"},
-    "CES0500000003": {"section": "Employment", "name": "Avg Hourly Earnings, Total Private ($, SA)"},
-    "PRS85006092": {"section": "Productivity", "name": "Output per Hour — Nonfarm Business (Q/Q %)"},
-    "CUUR0000SA0": {"section": "Price Index", "name": "CPI-U All Items (NSA, Basis: 1982–84)"},
-    "CIU1010000000000A": {"section": "Compensation", "name": "ECI — Total Compensation, Private (12m % change, NSA)"},
+    "LNS12000000": {"section": "Employment", "freq": "Monthly", "name": "Civilian Employment (Thousands, SA)"},
+    "CES0000000001": {"section": "Employment", "freq": "Monthly", "name": "Total Nonfarm Employment (Thousands, SA)"},
+    "LNS14000000": {"section": "Employment", "freq": "Monthly", "name": "Unemployment Rate (% SA)"},
+    "CES0500000002": {"section": "Employment", "freq": "Monthly", "name": "Avg Weekly Hours, Total Private (SA)"},
+    "CES0500000003": {"section": "Employment", "freq": "Monthly", "name": "Avg Hourly Earnings, Total Private ($, SA)"},
+    "PRS85006092": {"section": "Productivity", "freq": "Quarterly", "name": "Output per Hour — Nonfarm Business (Q/Q %)"},
+    "CUUR0000SA0": {"section": "Price Index", "freq": "Monthly", "name": "CPI-U All Items (NSA, Basis: 1982–84)"},
+    "CIU1010000000000A": {"section": "Compensation", "freq": "Quarterly", "name": "ECI — Total Compensation, Private (12m % change, NSA)"},
 }
 sections = ["Employment", "Productivity", "Price Index", "Compensation"]
 
@@ -43,10 +43,10 @@ coverage = (df.groupby("series_id")["date"]
     .rename_axis("series_id")
     .reset_index()
 )
-
 coverage["series_name"] = coverage["series_id"].map(lambda sid: series.get(sid, {}).get("name", sid))
 coverage["coverage_year"] = (coverage["min"].dt.strftime("%m.%d.%Y") + " - " + coverage["max"].dt.strftime("%m.%d.%Y"))
-
+coverage["frequency"] = coverage["series_id"].map(lambda sid: series.get(sid, {}).get("freq", "")
+)
 coverage = coverage.rename(columns={
     "series_name": "Economic Indicator",
     "coverage_year": "Coverage Year",
@@ -58,6 +58,14 @@ coverage.index.name = "#"
 
 st.caption("Original Source: [U.S. Bureau of Labor Statistics](https://data.bls.gov/toppicks?survey=bls)")
 st.dataframe(coverage, use_container_width=True)
+st.markdown(
+    """
+- **SA** = Seasonally Adjusted  
+- **NSA** = Not Seasonally Adjusted  
+- **CPI-U** = Consumer Price Index for All Urban Consumers  
+- **ECI** = Employment Cost Index  
+"""
+)
 
 # Download filtered CSV
 st.download_button(
