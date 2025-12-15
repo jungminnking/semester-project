@@ -22,8 +22,8 @@ series = {
     "LNS12000000": {"section": "Employment", "freq": "Monthly", "name": "Civilian Employment (Thousands of Persons, SA)"},
     "CES0000000001": {"section": "Employment", "freq": "Monthly", "name": "Total Nonfarm Employment (Thousands of Persons, SA)"},
     "LNS14000000": {"section": "Employment", "freq": "Monthly", "name": "Unemployment Rate (%, SA)"},
-    "CES0500000002": {"section": "Employment", "freq": "Monthly", "name": "Avg Weekly Working Hours, Total Private (hours, SA)"},
-    "CES0500000003": {"section": "Employment", "freq": "Monthly", "name": "Avg Hourly Earnings, Total Private ($, SA)"},
+    "CES0500000002": {"section": "Employment", "freq": "Monthly", "name": "Avg Weekly Working Hours, Total Private (Hours, SA)"},
+    "CES0500000003": {"section": "Employment", "freq": "Monthly", "name": "Avg Hourly Earnings, Total Private ($USD, SA)"},
     "PRS85006092": {"section": "Productivity", "freq": "Quarterly", "name": "Output per Hour, Nonfarm Business (% Change from previous quarter, SA)"},
     "CUUR0000SA0": {"section": "Price Index", "freq": "Monthly", "name": "CPI-U, All Items (Basis: 1982–84, NSA)"},
     "CIU1010000000000A": {"section": "Compensation", "freq": "Quarterly", "name": "Employment Cost Index, All Civilian Workers (12m % change, NSA)"},
@@ -53,6 +53,7 @@ coverage = coverage.rename(columns={
     "frequency": "Frequency",
     "count": "Number of Obs.",
 })[["Economic Indicator", "Coverage Year", "Frequency", "Number of Obs."]]
+
 coverage.index = coverage.index + 1
 coverage.index.name = "#"
 
