@@ -6,7 +6,7 @@ This repository contains the original source codes for the **US Economy Dashboar
 
   https://semester-project-tdrk9syvkzfbwhnuwhvp3q.streamlit.app/
 
-All codes are based on the knowledge learned through ECON 8320 and further personal grinding with the help of AI tools.   
+All codes are based on the knowledge learned through the Python course and further personal grinding with the help of AI tools.   
 
 You can find the main code of the project in "**main_code.py**"  
 
