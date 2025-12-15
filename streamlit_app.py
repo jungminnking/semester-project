@@ -67,7 +67,7 @@ st.markdown(
 """
 )
 
-# Download filtered CSV
+# Downloading
 st.download_button(
     "Download CSV",
     df.to_csv(index=False).encode("utf-8"),
@@ -99,5 +99,5 @@ for sec, tab in zip(sections, tabs):
 # Footer
 st.write("---")
 st.caption(
-    "Reading original source codes from: "
+    "Checking the original source codes from: "
     "[https://github.com/jungminnking/semester-project](https://github.com/jungminnking/semester-project)")
