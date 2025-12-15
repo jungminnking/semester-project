@@ -98,4 +98,6 @@ for sec, tab in zip(sections, tabs):
 
 # Footer
 st.write("---")
-st.caption(f"Reading data directly from: {csv_url}")
+st.caption(
+    "Reading original source codes from: "
+    "[https://github.com/jungminnking/semester-project](https://github.com/jungminnking/semester-project)")
