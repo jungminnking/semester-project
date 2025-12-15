@@ -53,8 +53,6 @@ coverage = coverage.rename(columns={
     "frequency": "Frequency",
     "count": "Number of Obs.",
 })[["Economic Indicator", "Coverage Year", "Frequency", "Number of Obs."]]
-
-
 coverage.index = coverage.index + 1
 coverage.index.name = "#"
 
