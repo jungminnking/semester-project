@@ -67,7 +67,7 @@ st.download_button(
     mime="text/csv",
 )
 
-# Charts
+# Charting
 tabs = st.tabs(sections)
 for sec, tab in zip(sections, tabs):
     with tab:
