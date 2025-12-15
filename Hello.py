@@ -1,4 +1,4 @@
-#%run "C:/Users/jungm/Documents/GitHub/semester-project/Hello.py"
+# %run "C:/Users/jungm/Documents/GitHub/semester-project/Hello.py"
 import os
 import json
 from datetime import datetime, timezone
