@@ -8,6 +8,7 @@ import requests
 import pandas as pd
 
 # API
+os.environ["BLS_API_KEY"] = "a156a9f565764275a445393d51cd4bed"
 BLS_URL: str = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
 START_YEAR: int = 2006
 END_YEAR: int = datetime.now(timezone.utc).year 
