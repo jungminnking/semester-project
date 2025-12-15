@@ -15,14 +15,14 @@ END_YEAR: int = datetime.now(timezone.utc).year
 
 # Series
 SERIES = [
-    ("LNS12000000", "Employment", "Civilian Employment (Thousands, SA)", "M"),
-    ("CES0000000001", "Employment", "Total Nonfarm Employment (Thousands, SA)", "M"),
-    ("LNS14000000", "Employment", "Unemployment Rate (% SA)", "M"),
-    ("CES0500000002", "Employment", "Avg Weekly Hours, Total Private (SA)", "M"),
+    ("LNS12000000", "Employment", "Civilian Employment (Thousands of Persons, SA)", "M"),
+    ("CES0000000001", "Employment", "Total Nonfarm Employment (Thousands of Persons, SA)", "M"),
+    ("LNS14000000", "Employment", "Unemployment Rate (%, SA)", "M"),
+    ("CES0500000002", "Employment", "Avg Weekly Working Hours, Total Private (hours, SA)", "M"),
     ("CES0500000003", "Employment", "Avg Hourly Earnings, Total Private ($, SA)", "M"),
-    ("PRS85006092", "Productivity", "Output per Hour — Nonfarm Business (Q/Q %)", "Q"),
-    ("CUUR0000SA0", "Price Index", "CPI-U All Items (NSA, Basis: 1982–84)", "M"),
-    ("CIU1010000000000A", "Compensation", "ECI — Total Compensation, Private (12m % change, NSA)", "Q"),
+    ("PRS85006092", "Productivity", "Output per Hour, Nonfarm Business (% Change from previous quarter, SA)", "Q"),
+    ("CUUR0000SA0", "Price Index", "CPI-U, All Items (Basis: 1982–84, NSA)", "M"),
+    ("CIU1010000000000A", "Compensation", "Employment Cost Index, All Civilian Workers (12m % change, NSA)", "Q"),
 ]
 
 # Path
