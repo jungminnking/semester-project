@@ -50,8 +50,10 @@ coverage["frequency"] = coverage["series_id"].map(lambda sid: series.get(sid, {}
 coverage = coverage.rename(columns={
     "series_name": "Economic Indicator",
     "coverage_year": "Coverage Year",
+    "frequency": "Frequency",
     "count": "Number of Obs.",
-})[["Economic Indicator", "Coverage Year", "Number of Obs."]]
+})[["Economic Indicator", "Coverage Year", "Frequency", "Number of Obs."]]
+
 
 coverage.index = coverage.index + 1
 coverage.index.name = "#"
