@@ -44,7 +44,7 @@ coverage = (df.groupby("series_id")["date"]
     .reset_index()
 )
 coverage["series_name"] = coverage["series_id"].map(lambda sid: series.get(sid, {}).get("name", sid))
-coverage["coverage_year"] = (coverage["min"].dt.strftime("%m.%d.%Y") + " - " + coverage["max"].dt.strftime("%m.%d.%Y"))
+coverage["coverage_year"] = (coverage["min"].dt.strftime("%m.%Y") + " - " + coverage["max"].dt.strftime("%m.%Y"))
 coverage["frequency"] = coverage["series_id"].map(lambda sid: series.get(sid, {}).get("freq", "")
 )
 coverage = coverage.rename(columns={
@@ -62,8 +62,7 @@ st.markdown(
     """
 - **SA** = Seasonally Adjusted  
 - **NSA** = Not Seasonally Adjusted  
-- **CPI-U** = Consumer Price Index for All Urban Consumers  
-- **ECI** = Employment Cost Index  
+- **CPI-U** = Consumer Price Index for All Urban Consumers 
 """
 )
 
