@@ -69,7 +69,7 @@ st.markdown(
 
 # Download filtered CSV
 st.download_button(
-    "⬇️ Download CSV",
+    "Download CSV",
     df.to_csv(index=False).encode("utf-8"),
     file_name="bls_timeseries_filtered.csv",
     mime="text/csv",

@@ -26,7 +26,7 @@ SERIES = [
 ]
 
 # Path
-REPO_DIR: Path = Path(__file__).resolve().parent
+REPO_DIR: Path = Path(r"C:/Users/jungm/Documents/GitHub/semester-project")
 DATA_DIR: Path = REPO_DIR / "data"
 CSV_PATH: Path = DATA_DIR / "bls_timeseries.csv"
 META_PATH: Path = DATA_DIR / "meta.json"
