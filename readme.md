@@ -12,4 +12,4 @@ You can find the main code of the project in "**main_code.py**"
 
 A linking code to Streamlit can be found in "**stremlit_app.py**"
 
-Check out "**github/workflows/bls-update.yml**" for Gihub Actions, updating on the first day of each month.
+Check out "**github/workflows/bls-update.yml**" for GitHub Actions, updating on the first day of each month.
